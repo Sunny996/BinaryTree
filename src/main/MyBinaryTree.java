@@ -19,10 +19,12 @@ public class MyBinaryTree<K extends Comparable<K>> {
         }
         return current;
     }
-    public int getSize(){
+
+    public int getSize() {
         return this.getSizeRecursive(root);
     }
-    private int getSizeRecursive(MyBinaryNode<K> current){
-        return current==null?0:1+this.getSizeRecursive(current.left)+this.getSizeRecursive(current.right);
+
+    private int getSizeRecursive(MyBinaryNode<K> current) {
+        return current == null ? 0 : 1 + this.getSizeRecursive(current.left) + this.getSizeRecursive(current.right);
     }
 }
