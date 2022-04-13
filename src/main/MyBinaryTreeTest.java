@@ -2,6 +2,8 @@ package main;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Optional;
+
 public class MyBinaryTreeTest {
     @Test
     public void given3NumbersWhenAddedToListShouldReturnSize3(){
@@ -48,8 +50,7 @@ public class MyBinaryTreeTest {
         myBinaryTree.add(16);
         myBinaryTree.add(63);
         myBinaryTree.add(67);
-
-        boolean bool=myBinaryTree.searchRecursively(myBinaryTree.root,63);
-        Assert.assertEquals(true,bool);
+        int num=(myBinaryTree.searchRecursively(myBinaryTree.root, 63)).key;
+        Assert.assertEquals(num,63);
     }
 }

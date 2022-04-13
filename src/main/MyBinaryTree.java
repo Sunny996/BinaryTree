@@ -7,13 +7,13 @@ public class MyBinaryTree<K extends Comparable<K>> {
         this.root = this.addRecursively(root, key);
     }
 
-    public boolean searchRecursively(MyBinaryNode<K> root, K key) {
+    public MyBinaryNode<K> searchRecursively(MyBinaryNode<K> root, K key) {
         MyBinaryNode<K> current = root;
         if(current==null)
-            return false;
+            return null;
         int compareResult = key.compareTo(current.key);
         if(compareResult==0)
-            return true;
+            return current;
         else if(compareResult<0)
             return searchRecursively(current.left,key);
         else
